@@ -151,18 +151,56 @@ The model was able to correctly guess 4 of the 5 traffic signs, which gives an a
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+The model is sure about all the images but is failing to make the correct precidtion 4 times out of 5, which is very bad. One reason might be it has overfitted to the training set althought the validation accuracy indicates otherwise. Another possibility might be the dataset is very different from the images shown, but that doesn't seem to be the case at lease for the maximum 60 kmh image and the animals crossing, which is correctly guessed. 
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| 1.0         			| keep left   									| 
+| 0.0     				| Beware of ice/snow 										|
+| 0.0					| Speed limit 120 km/h											|
+| 0.0	      			| Speed limit 80 km/h					 				|
+| 0,0			    | Animals crossing      							|
 
 
-For the second image ... 
+For the second image which is a no entry sign, the prediction is also wrong : 
 
+| Probability           |     Prediction                                                        | 
+|:---------------------:|:---------------------------------------------:| 
+| 1.0                           | priority road                                                                    |
+| 0.0                                   | Right of way at the next intersection                                                                            |
+| 0.0                                   | Yield                                                                                  |
+| 0.0                           | Traffic signals                                                                   |
+| 0,0                       | Speed limit 20 km/h                                                          |
 
+For the third image which is a stop sign, the prediction is also wrong: 
 
+| Probability           |     Prediction                                                        | 
+|:---------------------:|:---------------------------------------------:| 
+| 1.0                           | priority road                                                                     |
+| 0.0                                   | No entry                                                                            |
+| 0.0                                   | No passing                                                                                  |
+| 0.0                           | No passing for vehicles over 3.5 metric tons                                                                   |
+| 0,0                       | Road work   
+
+                                                       |
+The fourth image is a maximum 60 km/h and the prediction is wrong although the model seems to have picked up the 'speed limit' concept. 
+
+| Probability           |     Prediction                                                        | 
+|:---------------------:|:---------------------------------------------:| 
+| 1.0                           | Speed limit 50 km/h                                                                     |
+| 0.0                                   | Speed limit 30 km/h                                                                            |
+| 0.0                                   | Speed limit 80 km/h                                                                                  |
+| 0.0                           | Speed limit 60 km/h                                                                   |
+| 0,0                       | end of speed limit 80 km/h                                                          |
+
+The last one is the only one that is accurately predicted by the model : 
+
+| Probability           |     Prediction                                                        | 
+|:---------------------:|:---------------------------------------------:| 
+| 1.0                           | Animals crossing                                                                     |
+| 0.0                                   | Speed limit 20 km/h                                                                            |
+| 0.0                                   | Speed limit 30 km/h                                                                                  |
+| 0.0                           | Speed limit 50 km/h                                                                   |
+| 0,0                       | Speed limit 60 km/h                                                          |
+
+There are many "speed limit" predictions, which might be due to the fact the dataset is biased by having more of these examples and less of the others. I have yet to find out a good way to augment it. 
