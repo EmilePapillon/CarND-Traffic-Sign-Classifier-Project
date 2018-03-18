@@ -56,10 +56,11 @@ signs data set:
 
 * The size of training set is 34799
 * The size of the validation set is 4410
-* The size of test set is 12630
+* The size of test set is 12630 
 * The shape of a traffic sign image is 32 by 32 pixels
 * The number of unique classes/labels in the data set is 43
 
+The sample german traffic signs from the web yielded an accuracy of 20% which is drastically different from the accuracy obtained from the test set.
 #### 2. Include an exploratory visualization of the dataset.
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data is distributed among the 43 different traffic sign types. The bar chart shows that some categories are underrepresented compared to some others. This can cause the CNN to not recognize some categories and to have a bias towards recognizing the ones that are overrepresented. 
@@ -203,4 +204,4 @@ The last one is the only one that is accurately predicted by the model :
 | 0.0                           | Speed limit 50 km/h                                                                   |
 | 0,0                       | Speed limit 60 km/h                                                          |
 
-There are many "speed limit" predictions, which might be due to the fact the dataset is biased by having more of these examples and less of the others. I have yet to find out a good way to augment it. 
+There are many "speed limit" predictions, which might be due to the fact the dataset is biased by having more of these examples and less of the others. I have yet to find out a good way to augment it. Strangely there is a huge difference between the performance of those images and the accurancy of the test set.  
