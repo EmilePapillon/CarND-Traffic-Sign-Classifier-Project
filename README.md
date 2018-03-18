@@ -3,6 +3,11 @@
 ## Writeup
 
 ---
+Copyrights disclaimer : 
+Some code was used from the web for data augmentation. The following websites were the source of this code :
+
+* https://medium.com/ymedialabs-innovation/data-augmentation-techniques-in-cnn-using-tensorflow-371ae43d5be9 (author : Prasad Pai)
+* https://github.com/aleju/imgaug
 
 **Build a Traffic Sign Recognition Project**
 
